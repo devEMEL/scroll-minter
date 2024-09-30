@@ -10,7 +10,7 @@ Scroll Minter is a platform that allows users to easily create their own NFT col
 
 ##### Contract Information
 
--   Factory Contract: 0x97a66F607166CdEc36cfe29407320b631765596b (deployed and verified on scroll sepolia network)
+-   Factory Contract: 0xE7ddc21df6Cd8Ef4822010713868f348C8859178 (deployed and verified on scroll sepolia network)
 
 ##### Alchemy RPC
 ![Alchemy RPC](https://github.com/user-attachments/assets/e6138a1f-0b4e-4c1b-873a-b60f92a209af)
@@ -33,3 +33,5 @@ Scroll Minter is a platform that allows users to easily create their own NFT col
 -   _Currency symbol_: ETH
 -   _Block explorer URL_: https://sepolia.scrollscan.com
 
+### Youtube Video
+[![YScroll NFT Collection Minter DApp](https://img.youtube.com/vi/_ukxugGU55A/0.jpg)](https://www.youtube.com/watch?v=_ukxugGU55A)

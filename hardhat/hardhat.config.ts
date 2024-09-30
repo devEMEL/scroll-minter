@@ -17,7 +17,7 @@ const scrollscanApiKey = process.env.SCROLLSCAN_API_KEY;
 const alchemyApiKey = process.env.ALCHEMY_API_KEY;
 const config: HardhatUserConfig = {
   solidity: {
-    version: "0.8.24",
+    version: "0.8.20",
     settings: {
       optimizer: {
         enabled: true,

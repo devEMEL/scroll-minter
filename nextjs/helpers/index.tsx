@@ -4,7 +4,7 @@ import Blockies from 'react-blockies';
 import { FileObject, PinataSDK } from 'pinata';
 import { Network, Alchemy } from 'alchemy-sdk';
 
-export const SCROLL_SEPOLIA_CA = '0x97a66F607166CdEc36cfe29407320b631765596b';
+export const SCROLL_SEPOLIA_CA = '0xE7ddc21df6Cd8Ef4822010713868f348C8859178';
 
    // Optional config object, but defaults to demo api-key and eth-mainnet.
 const settings = {
