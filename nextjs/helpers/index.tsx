@@ -8,7 +8,7 @@ export const SCROLL_SEPOLIA_CA = '0x97a66F607166CdEc36cfe29407320b631765596b';
 
    // Optional config object, but defaults to demo api-key and eth-mainnet.
 const settings = {
-    apiKey: process.env.NEXT_ALCHEMY_API_KEY, // Replace with your Alchemy API Key.
+    apiKey: process.env.NEXT_PUBLIC_ALCHEMY_API_KEY, // Replace with your Alchemy API Key.
     network: Network.SCROLL_SEPOLIA, // Replace with your network.
 };
 const alchemy = new Alchemy(settings);
@@ -77,10 +77,11 @@ export const getTokenURI = async (metadata: object) => {
 export const MakeTxCallWithAlchemy = async(to: string, data: any) => {
     console.log("testing alchemy");
     const tx = {
-        to: SCROLL_SEPOLIA_CA,
+        to,
         data
     };
     const response = alchemy.core.call(tx);
+    console.log(response);
     return response;
 
 }

@@ -2,6 +2,7 @@ import {
     getTokenURI,
     imageURIToSrc,
     MakeTxCallWithAlchemy,
+    SCROLL_SEPOLIA_CA,
     truncateAddress,
     weiToEther,
 } from '@/helpers';
@@ -43,17 +44,13 @@ const CollectionList = () => {
         contractAddress: string,
         price: number
     ) => {
-        // const contract = new ethers.Contract(
-        //     contractAddress,
-        //     NFTCollection.abi,
-        //     myProvider
-        // );
-        // // const tokenId = await contract._tokenIds(); !important
-        // // _tokenId() selector  
-        // // _tokenId() selector  (0x70a08231)
-        const tokenIdHex = await MakeTxCallWithAlchemy(contractAddress, "0x70a08231");
-        console.log(tokenIdHex);
-
+        const contract = new ethers.Contract(
+            contractAddress,
+            NFTCollection.abi,
+            myProvider
+        );
+        const tokenId = await contract._tokenIds(); 
+        
         // // const maxSupply = await contract.maxSupply();
         // // const _initialImageURI = await contract._imageURI();
         // // const price_ = await contract.price()

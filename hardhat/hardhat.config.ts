@@ -2,7 +2,7 @@ import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 
 import * as dotenv from "dotenv";
-dotenv.config();
+require('dotenv').config();
 import "@nomicfoundation/hardhat-ethers";
 import "@nomicfoundation/hardhat-chai-matchers";
 import "@typechain/hardhat";
@@ -13,7 +13,7 @@ import "@nomicfoundation/hardhat-verify";
 
 // If not set, it uses the hardhat account 0 private key.
 const deployerPrivateKey = process.env.DEPLOYER_PRIVATE_KEY || ""; 
-const scrollscanApiKey = process.env.XQZ1E98NFCRRRRZA46G95HJBMG5CDHWB8N;
+const scrollscanApiKey = process.env.SCROLLSCAN_API_KEY;
 const alchemyApiKey = process.env.ALCHEMY_API_KEY;
 const config: HardhatUserConfig = {
   solidity: {

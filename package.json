@@ -1,0 +1,22 @@
+{
+    "name": "@scroll-minter/monorepo",
+    "version": "1.0.0",
+    "private": true,
+    "workspaces": [
+        "hardhat",
+        "nextjs"
+    ],
+    "scripts": {
+        "dev:next": "npm run dev -w @scroll-minter/nextjs",
+        "build:next": "npm run build -w @scroll-minter/nextjs",
+        "start:next": "npm run start -w @scroll-minter/nextjs start",
+        "test:hardhat": "npm run test -w @scroll-minter/hardhat"
+    },
+    "devDependencies": {
+        "eslint": "^8.36.0",
+        "prettier": "^2.8.0"
+    },
+    "dependencies": {
+        "dotenv": "^16.4.5"
+    }
+}

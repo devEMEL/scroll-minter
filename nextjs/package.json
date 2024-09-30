@@ -1,5 +1,5 @@
 {
-    "name": "@celo-project/react-app",
+    "name": "@scroll-minter/nextjs",
     "version": "0.1.0",
     "private": true,
     "scripts": {
