@@ -6,21 +6,52 @@ import { useAccount, useBalance } from 'wagmi';
 import Link from 'next/link';
 import kombatOdysseyImg from '../public/kombat-odyssey.jpeg';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { getEthBalance, latestBlockNumber } from '@/helpers';
+import { formatEther } from 'ethers';
 
 export default function Header() {
+
+
+    const [balance, setBalance] = useState("0");
+    const [blockNumber, setBlockNumber] = useState(6810228);
     // Use the useAccount hook to store the user's address
     const { address, isConnected } = useAccount();
     const { data: ethBalance } = useBalance({ address, chainId: 534351 }); // 11155111 sepolia
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    // If the user is connected and has a balance, display the balance
     useEffect(() => {
-        if (isConnected && ethBalance) {
-            // setDisplayBalance(true);
-            // return;
+        const fetchBalance = async() => {
+            console.log(address);
+            const bal = await getEthBalance(address);
+            const ethBal = formatEther(bal.toString());
+            const roundedBalance = parseFloat(ethBal).toFixed(3);
+            console.log(roundedBalance);
+            setBalance(roundedBalance);
         }
-    }, [ethBalance, isConnected]);
+        if (isConnected) {
+            fetchBalance();
+        }
+
+        const fetchBlockNumber = async () => {
+            const rs = await latestBlockNumber();
+            if(rs !== undefined) setBlockNumber(rs);
+        }
+
+        const interval = setInterval(() => {
+            fetchBlockNumber();  
+        }, 2000);
+
+        return () => clearInterval(interval);
+    }, [isConnected]);
+
+    // If the user is connected and has a balance, display the balance
+    // useEffect(() => {
+    //     if (isConnected && ethBalance) {
+    //         // setDisplayBalance(true);
+    //         // return;
+    //     }
+    // }, [ethBalance, isConnected]);
 
     const handleToggleMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -60,10 +91,14 @@ export default function Header() {
                                 {/* <Link href="/profile" className="hover:text-gray-500">My Profile</Link> */}
                                 <p className="text-gray-500">My Profile</p>
                             </li>
+                            <li>
+                                ETH Balance: {balance} ETH
+                            </li>
+                            <div className='text-center'>BlockNumber: {blockNumber}</div>
                         </ul>
                     </div>
                     <div className="flex items-center gap-6">
-                        <ConnectButton />
+                        <ConnectButton showBalance={false} />
                         <div className="md:hidden" onClick={handleToggleMenu}>
                             {isMobileMenuOpen ? (
                                 <XMarkIcon width="25" cursor="pointer" />

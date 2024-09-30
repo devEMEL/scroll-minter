@@ -19,6 +19,8 @@ const navigation = [
 ];
 
 export default function Footer() {
+
+
     return (
         <footer className=" text-[#ffffff] font-lato">
             <div className="mx-auto max-w-7xl py-6 px-5 sm:px-6 lg:px-8">

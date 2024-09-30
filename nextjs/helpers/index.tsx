@@ -73,7 +73,19 @@ export const getTokenURI = async (metadata: object) => {
     return `ipfs://${upload.IpfsHash}`;
 };
 
-    // Define function that handles the creation of a product through the marketplace contract
+export const latestBlockNumber = async() => {
+    // Get the latest block number
+    const blockNumber = await alchemy.core.getBlockNumber();
+    // console.log(blockNumber);
+    return blockNumber;
+}
+
+export const getEthBalance = async(addr: any) => {
+    const balance = await alchemy.core.getBalance(addr, "latest");
+    return balance;
+}
+
+// Define function that handles the creation of a product through the marketplace contract
 export const MakeTxCallWithAlchemy = async(to: string, data: any) => {
     console.log("testing alchemy");
     const tx = {

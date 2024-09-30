@@ -10,7 +10,7 @@ Scroll Minter is a platform that allows users to easily create their own NFT col
 
 ##### Contract Information
 
--   Factory Contract: 0x97a66F607166CdEc36cfe29407320b631765596b
+-   Factory Contract: 0x97a66F607166CdEc36cfe29407320b631765596b (verified on scroll sepolia network)
 
 ##### Features
 
