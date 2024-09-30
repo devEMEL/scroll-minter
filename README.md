@@ -23,7 +23,7 @@ Scroll Minter is a platform that allows users to easily create their own NFT col
 -   _Scalable Architecture_: Built to handle multiple collections and mints seamlessly.
 
 ##### Project demo URL
-https://scroll-minter-git-main-devemels-projects.vercel.app/
+https://scroll-minter.vercel.app/
 
 
 ##### Network details
